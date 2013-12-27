@@ -5,8 +5,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    input = JSON.parse(params["user"], symbolize_names: true)
-    p User.create(input)
+    user = make_hash_with_symbol_keys(params["user"])
+    User.create(user)
+  end
+
+
+  private
+
+  def make_hash_with_symbol_keys(json_object)
+    JSON.parse(json_object, symbolize_names: true)
   end
 
 end
