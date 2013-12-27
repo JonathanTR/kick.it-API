@@ -8,7 +8,11 @@ gem 'rails-api'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use bcrypt for passwords
 gem 'bcrypt-ruby'
+
+# Use JSON gem for parsing input
+gem 'json'
 
 group :development do
   
