@@ -1,5 +1,5 @@
 KickIt::Application.routes.draw do
 
-  resources :users, only: [:new]
+  resources :users, only: [:new, :create]
 
 end

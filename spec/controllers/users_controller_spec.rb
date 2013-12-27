@@ -17,6 +17,24 @@ describe UsersController do
 
     end
 
+    describe 'on POST #create' do
+
+      describe 'with valid params' do
+        it 'should create a user' do
+          expect {
+            post :create, user: {
+              email: 'John.Doe@example.com',
+              password: 'pass1234',
+              password_confirmation: 'pass1234',
+              name: 'John Doe'
+            }.to_json
+          }.to change{ User.count }
+        end
+
+      end
+
+    end
+
   end
 
 end
